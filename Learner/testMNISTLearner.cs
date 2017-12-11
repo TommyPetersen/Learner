@@ -86,19 +86,23 @@ namespace Learner
             
             byte convertedLabel = learner.convertOutputVectorToLabel(OV);
 
-            Console.WriteLine("Converted label: " + convertedLabel);
+            //Console.WriteLine("Converted label: " + convertedLabel);
+
+            learner.MNISTAssignTrainingData();
 
             int miniBatchSize = 10;
             double eta = 3D;
-            int nrOfEpochs = 1;
+            int nrOfEpochs = 30;
 
-            Console.WriteLine("Training network...");
-            learner.MNISTTrain(miniBatchSize, eta, nrOfEpochs);
-            Console.WriteLine("...done");
+            Console.WriteLine("Precision before training: " + learner.computePrecision());
 
-            Console.WriteLine("Precision = " + learner.computePrecision());
-
-            Console.WriteLine("testLearner: DONE!");
+            Console.WriteLine("Training network with mini-batch size = " + miniBatchSize + ", eta = " + eta + "...");
+            for (int neo = 1; neo <= nrOfEpochs; neo++)
+            {
+                learner.MNISTTrain(miniBatchSize, eta, 1);
+                Console.WriteLine("Precision after epoch " + neo + ": " + learner.computePrecision());
+            }
+            Console.WriteLine("...done training!");
         }
     }
 }

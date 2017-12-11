@@ -87,9 +87,14 @@ namespace Learner
             }
         }
 
+        public void MNISTAssignTrainingData()
+        {
+            ann.assignTrainingData(trainingInputVectors, trainingOutputVectors);
+        }
+
         public void MNISTTrain(int miniBatchSize, double eta, int nrOfEpochs)
         {
-            ann.trainANN(trainingInputVectors, trainingOutputVectors, miniBatchSize, eta, nrOfEpochs);
+            ann.runAllEpochs(miniBatchSize, eta, nrOfEpochs);
         }
 
         public byte MNISTClassify(MNISTImage image)

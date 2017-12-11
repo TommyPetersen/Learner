@@ -32,10 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ANN">
+    <Reference Include="ANN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ANN\ANN\bin\Debug\ANN.exe</HintPath>
     </Reference>
-    <Reference Include="Dataset">
+    <Reference Include="Dataset, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Dataset\Dataset\obj\Debug\Dataset.exe</HintPath>
     </Reference>
     <Reference Include="System" />
