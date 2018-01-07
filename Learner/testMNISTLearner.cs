@@ -88,8 +88,10 @@ namespace Learner
 
             //Console.WriteLine("Converted label: " + convertedLabel);
 
+            //trainANN:
             learner.MNISTAssignTrainingData();
 
+            //runAllEpochs:
             int miniBatchSize = 10;
             double eta = 3D;
             int nrOfEpochs = 30;
@@ -99,7 +101,7 @@ namespace Learner
             Console.WriteLine("Training network with mini-batch size = " + miniBatchSize + ", eta = " + eta + "...");
             for (int neo = 1; neo <= nrOfEpochs; neo++)
             {
-                learner.MNISTTrain(miniBatchSize, eta, 1);
+                learner.MNISTTrain(miniBatchSize, eta);     //runSingleEpoch
                 Console.WriteLine("Precision after epoch " + neo + ": " + learner.computePrecision());
             }
             Console.WriteLine("...done training!");

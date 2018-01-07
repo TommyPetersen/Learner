@@ -92,9 +92,9 @@ namespace Learner
             ann.assignTrainingData(trainingInputVectors, trainingOutputVectors);
         }
 
-        public void MNISTTrain(int miniBatchSize, double eta, int nrOfEpochs)
+        public void MNISTTrain(int miniBatchSize, double eta)
         {
-            ann.runAllEpochs(miniBatchSize, eta, nrOfEpochs);
+            ann.runSingleEpoch(miniBatchSize, eta);
         }
 
         public byte MNISTClassify(MNISTImage image)
